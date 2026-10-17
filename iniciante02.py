@@ -9,6 +9,9 @@ link: https://github.com/caiolflima/projetos_python_iniciante/
 '''
 
 from math import pi
+escolha = 0
+caracter = 'tigre'
+
 def apresentar_2d():
     print('''Qual caracteristica deseja calcular?
      P - Perimetro
@@ -17,8 +20,15 @@ def apresentar_2d():
      ''')
     return '>'
 
-escolha = 0
-caracter = ''
+def erro_calculo(c):
+    if c not in 'PAT':
+        while c not in 'PAT':
+            print('Escolha invalida.')
+            c = str(input(apresentar_2d())).upper().strip()[0]
+        return c
+    else:
+        pass
+
 
 print('-='*12)
 dimensoes = int(input('Dimensões do objeto [2 ou 3]: '))
@@ -40,10 +50,10 @@ if dimensoes == 2:
         print('Escolha inválida.')
         escolha = int(input('>'))
     if escolha ==1:
+        print('Círculo')
         raio = float(input('Qual o raio do circulo? [cm]'))
         caracter = str(input(apresentar_2d())).upper().strip()[0]
-        while caracter not in 'PAT':
-            caracter = str(input(apresentar_2d())).upper().strip()[0]
+        erro_calculo(caracter)
         area = pi * (raio ** 2)
         perimetro = 2 * pi * raio
         if caracter == 'A':
@@ -53,6 +63,10 @@ if dimensoes == 2:
         elif caracter == 'T':
             print(f'A área do Círculo é de: {area:.2f}cm2')
             print(f'O Perimetro do Círculo é de: {perimetro:.2f}cm')
+    elif escolha ==2:
+        print('Triângulo Equilátero')
+        lado = float(input('Qual o valor do lado do triângulo? [cm] '))
+
 
 elif dimensoes == 3:
     pass

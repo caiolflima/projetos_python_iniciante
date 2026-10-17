@@ -27,8 +27,7 @@ def erro_calculo(c):
             c = str(input(apresentar_2d())).upper().strip()[0]
         return c
     else:
-        pass
-
+        return c
 
 print('-='*12)
 dimensoes = int(input('Dimensões do objeto [2 ou 3]: '))
@@ -52,8 +51,7 @@ if dimensoes == 2:
     if escolha ==1:
         print('Círculo')
         raio = float(input('Qual o raio do circulo? [cm]'))
-        caracter = str(input(apresentar_2d())).upper().strip()[0]
-        erro_calculo(caracter)
+        caracter = erro_calculo(str(input(apresentar_2d())).upper().strip()[0])
         area = pi * (raio ** 2)
         perimetro = 2 * pi * raio
         if caracter == 'A':
@@ -66,7 +64,6 @@ if dimensoes == 2:
     elif escolha ==2:
         print('Triângulo Equilátero')
         lado = float(input('Qual o valor do lado do triângulo? [cm] '))
-
 
 elif dimensoes == 3:
     pass

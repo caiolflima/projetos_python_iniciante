@@ -22,7 +22,6 @@ def checar_tri(l1,l2): - Checa se os lados do triângulo isósceles formam triâ
 
 Formas 3d:\n
 def recolher_valores3d(): - Verifica a forma escolhida, recolhe e informa os atributos necessários de formas 2d\n
-
 '''
 from math import pi, sqrt
 escolha = 0
@@ -56,7 +55,7 @@ def recolher_valores2d():
 def recolher_valores3d():
     forma = formas_3d[escolha-1]
     if escolha==5:
-        print(forma, atributos3d[4])
+        print(forma, atributos3d[3])
     else:
         print(forma, atributos3d[escolha-1])
     atributo1 = float(input('Escreva o primeiro valor [cm]: '))
@@ -196,7 +195,19 @@ elif dimensoes == 3:
         volume = altura*largura*profund
         print(mostrar_resultado(caracter, forma, area, volume))
     elif escolha ==4:
-        pass
+        forma, lado, altura = recolher_valores3d()
+        caracter = verificar_escolha(str(input(apresentar_caracter())).upper().strip()[0])
+        apotema_base = lado/(2*(sqrt(3)))
+        apotema_piramide = sqrt((altura**2)+(apotema_base**2))
+        area = (3*((lado*apotema_piramide)/2) + ((lado**2)*sqrt(3))/4)
+        volume = (((lado**2)/4)*sqrt(3)*altura)/3
+        print(mostrar_resultado(caracter, forma, area, volume))
+
     elif escolha ==5:
-        pass
+        forma, lado, altura = recolher_valores3d()
+        caracter = verificar_escolha(str(input(apresentar_caracter())).upper().strip()[0])
+        apotema = sqrt((altura**2) + ((lado/2)**2)) #apotema da piramide base quadrada é diferente da de base triangular
+        area = 4*((lado*apotema)/2) + (lado**2)
+        volume = ((lado**2)*altura)/3
+        print(mostrar_resultado(caracter, forma, area, volume))
 print('Fim do Programa.')

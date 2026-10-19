@@ -21,7 +21,7 @@ def perimetro_quad(l1, l2): - Calculo o perimetro do quadrado e retangulo\n
 def checar_tri(l1,l2): - Checa se os lados do triângulo isósceles formam triângulo\n
 
 Formas 3d:\n
-def recolher_valores3d(): - Verifica a forma escolhida, recolhe e informa os atributos necessários de formas 2d\n
+def recolher_valores3d(): - Verifica a forma escolhida, recolhe e informa os atributos necessários de formas 3d
 '''
 from math import pi, sqrt
 escolha = 0

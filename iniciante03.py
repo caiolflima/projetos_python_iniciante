@@ -10,6 +10,8 @@ link: https://github.com/caiolflima/projetos_python_iniciante/'''
 print('-='*30)
 print(f'{"Conversor de segundos":^60}')
 segundos_entrada = int(input('Quantos segundos deseja converter? '))
+while segundos_entrada < 0:
+    segundos_entrada = int(input('Quantos segundos deseja converter? '))
 
 anos = segundos_entrada // 31536000
 segundos_entrada -= (31536000 * anos)

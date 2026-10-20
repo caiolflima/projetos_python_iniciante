@@ -14,7 +14,7 @@ escolha_cores = str(input('Cores das três faixas (separadas por espaço): ')).s
 
 for cor in escolha_cores:
     if cor not in resistores:
-        print('Cor inválida. Escreva novas cores:')
+        print(f'Cor {cor} inválida. Escreva novas cores:')
         escolha_cores = str(input('Cores das três faixas (separadas por espaço): ')).split()
     elif cor in resistores:
         calc_resistencia.append(resistores[cor])
